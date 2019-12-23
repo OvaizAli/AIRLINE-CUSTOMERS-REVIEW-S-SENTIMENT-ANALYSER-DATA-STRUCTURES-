@@ -50,6 +50,10 @@ class sentinal
 		
 		int notflag=0;
 		
+		int dontflag=0;
+		
+		int wontflag=0;
+		
 		int len;
 		
 		int flag=0;
@@ -291,7 +295,7 @@ class sentinal
 			for(int i=0;i<len;i++)
 			{
 				
-				if(userinput[i]==' '||userinput[i]=='.')
+				if(userinput[i]==' ')
 				{
 					
 					x++;
@@ -300,6 +304,16 @@ class sentinal
 					
 					continue;
 				
+				}
+				
+				if(userinput[i]=='.'||userinput[i]==',')
+				{
+						
+					x++;
+					
+					wordcount++;
+					
+					continue;
 				}
 				
 				words[x]+=userinput[i];
@@ -337,6 +351,46 @@ class sentinal
 						notflag=0;
 						
 						flag++;
+						
+						return;
+					
+					}
+					
+					if(wontflag==1)
+					{
+						
+						negative++;
+						
+						string t="won't ";
+						
+						t+=temp;
+						
+						negtv.push(t);
+						
+						wontflag=0;
+						
+						flag++;
+						
+						return;
+					
+					}
+					
+					if(dontflag==1)
+					{
+						
+						negative++;
+						
+						string t="don't ";
+						
+						t+=temp;
+						
+						negtv.push(t);
+						
+						dontflag=0;
+						
+						flag++;
+						
+						return;
 					
 					}
 					
@@ -348,6 +402,8 @@ class sentinal
 						postv.push(temp);
 						
 						flag++;
+						
+						return;
 					
 					}
 				
@@ -370,6 +426,46 @@ class sentinal
 						notflag=0;
 						
 						flag++;
+						
+						return;
+					
+					}
+					
+					if(wontflag==1)
+					{
+						
+						positive++;
+						
+						string t="won't ";
+						
+						t+=temp;
+						
+						postv.push(t);
+						
+						wontflag=0;
+						
+						flag++;
+						
+						return;
+					
+					}
+					
+					if(dontflag==1)
+					{
+						
+						positive++;
+						
+						string t="don't ";
+						
+						t+=temp;
+						
+						postv.push(t);
+						
+						dontflag=0;
+						
+						flag++;
+						
+						return;
 					
 					}
 					
@@ -381,6 +477,8 @@ class sentinal
 						negtv.push(temp);
 						
 						flag++;
+						
+						return;
 					
 					}
 				
