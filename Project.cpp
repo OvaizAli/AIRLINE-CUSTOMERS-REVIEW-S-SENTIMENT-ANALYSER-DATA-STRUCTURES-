@@ -463,6 +463,8 @@ class sentinal
 			
 			cout<<"positive sentiments: "<<positive<<endl;
 			
+			cout<<"Negative sentiments: "<<negative<<endl;
+			
 			cout<<"total sentimental references: "<<total<<endl;
 			
 			cout<<endl;
