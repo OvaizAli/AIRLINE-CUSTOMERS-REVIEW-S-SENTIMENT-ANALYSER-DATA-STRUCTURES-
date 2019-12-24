@@ -1,0 +1,49 @@
+analysed sentence: 
+the food was really tasty but the tea was not that much strong as i like but its okay because everything can't be upto the choice.
+
+positive words:
+tasty
+like
+
+negative words:
+not strong
+
+positive sentiments: 2
+Negative sentiments: 1
+total sentimental references: 3
+
+POLARITY OF THE SENTENCE IS: 0.666667
+
+analysed sentence: 
+i am pleased to tellyou that me and my wife really enjoyed your trip and its services especially the food and the seats which were really comfortable. thanks for making our honymoon journey really amazing and worth remembering. :) <3
+
+positive words:
+pleased
+enjoyed
+comfortable
+amazing
+worth
+:)
+<3
+
+positive sentiments: 7
+Negative sentiments: 0
+total sentimental references: 7
+
+POLARITY OF THE SENTENCE IS: 1
+
+analysed sentence: 
+i am sorry to say but we didnt enjoyed any of the provided services. pathetic crew and service :{
+
+negative words:
+sorry
+didn't enjoyed
+pathetic
+:{
+
+positive sentiments: 0
+Negative sentiments: 4
+total sentimental references: 4
+
+POLARITY OF THE SENTENCE IS: 0
+

@@ -599,7 +599,7 @@ class sentinal
 				
 				if(words[i]=="not")
 				{
-					cout<<"not"<<endl;////
+					
 					notflag++;
 					
 					continue;
@@ -608,7 +608,7 @@ class sentinal
 				
 				if(words[i]=="no")
 				{
-					cout<<"no"<<endl;///
+					
 					noflag++;
 					
 					continue;
@@ -617,7 +617,7 @@ class sentinal
 				
 				if(words[i]=="none")
 				{
-					cout<<"none"<<endl;////
+					
 					noneflag++;
 					
 					continue;
@@ -626,7 +626,7 @@ class sentinal
 				
 				if(words[i]=="wont"||words[i]=="won't")
 				{
-					cout<<"wont"<<endl;////
+					
 					wontflag++;
 					
 					continue;
@@ -635,7 +635,7 @@ class sentinal
 				
 				if(words[i]=="dont"||words[i]=="don't")
 				{
-					cout<<"dont"<<endl;////
+					
 					dontflag++;
 					
 					continue;
@@ -644,7 +644,7 @@ class sentinal
 				
 				if(words[i]=="didnt"||words[i]=="didn't")
 				{
-					cout<<"didnt"<<endl;////
+					
 					didntflag++;
 					
 					continue;
@@ -666,10 +666,104 @@ class sentinal
 		}
 		
 		
-		void result()
+		void result(int choice)
 		{
 			
 			//system("cls");
+			if(choice==1)
+				result_user();
+				
+			if(choice==2)
+				result_file();	
+			
+			for(int i=0;i<wordcount;i++)
+			{
+				
+				words[i].clear();
+					
+			}
+		
+		}
+		
+		int result_user()
+		{
+			
+			ofstream out;
+			
+			out.open("Output.txt",ios_base::app);
+			
+			cout<<"analysed sentence: "<<endl<<userinput<<endl;
+			
+			out<<"analysed sentence: "<<endl<<userinput<<endl;
+			
+			if(!postv.empty())
+			{
+				
+				cout<<endl<<"positive words:"<<endl;
+				
+				out<<endl<<"positive words:"<<endl;
+				
+				while(!postv.empty())
+				{
+					
+					cout<<postv.front()<<endl;
+					
+					out<<postv.front()<<endl;
+					
+					postv.pop();
+				
+				}
+			
+			}
+			
+			if(!negtv.empty())
+			{
+				
+				cout<<endl<<"negative words:"<<endl;
+				
+				out<<endl<<"negative words:"<<endl;
+				
+				while(!negtv.empty())
+				{
+					
+					cout<<negtv.front()<<endl;
+					
+					out<<negtv.front()<<endl;
+					
+					negtv.pop();
+				
+				}
+			
+			}
+			
+			cout<<endl;
+			
+			out<<endl;
+			
+			double total=positive+negative;
+			
+			cout<<"positive sentiments: "<<positive<<endl;
+			
+			out<<"positive sentiments: "<<positive<<endl;
+			
+			cout<<"Negative sentiments: "<<negative<<endl;
+			
+			out<<"Negative sentiments: "<<negative<<endl;
+			
+			cout<<"total sentimental references: "<<total<<endl;
+			
+			out<<"total sentimental references: "<<total<<endl;
+			
+			polarity=positive/total;
+			
+			cout<<endl<<"POLARITY OF THE SENTENCE IS: "<<polarity<<endl<<endl;
+			
+			out<<endl<<"POLARITY OF THE SENTENCE IS: "<<polarity<<endl<<endl;
+			
+		}
+		
+		void result_file()
+		{
 			
 			cout<<"analysed sentence: "<<endl<<userinput<<endl;
 			
@@ -719,21 +813,13 @@ class sentinal
 			
 			cout<<endl<<"POLARITY OF THE SENTENCE IS: "<<polarity<<endl<<endl;
 			
-			for(int i=0;i<wordcount;i++)
-			{
-				
-				words[i].clear();
-					
-			}
-		
 		}
-		
 		void upperToLowerCase()
 		{
 			transform(userinput.begin(),userinput.end(),userinput.begin(),::tolower);
 		}
 		
-		void user_input()
+		void user_input(int choice)
 		{
 			
 			cout<<"Enter customer's review for analysis:"<<endl;
@@ -741,6 +827,8 @@ class sentinal
 			fflush(stdin);
 			
 			getline(cin,userinput);
+			
+			system("cls");
 			
 			ofstream out;
 			
@@ -754,13 +842,13 @@ class sentinal
 			
 			word_search();
 			
-			result();
+			result(choice);
 			
 			out.close();
 		}
 		
 		
-		void file_input()
+		void file_input(int choice)
 		{
 			
 			fstream inp("Input.txt");
@@ -787,7 +875,7 @@ class sentinal
 				
 				word_search();
 				
-				result();
+				result(choice);
 				
 			}	
 			
@@ -828,13 +916,13 @@ int main()
 		
 		case 1:
 			
-			sen.user_input();
+			sen.user_input(choice);
 			
 			break;
 		
 		case 2:
 			
-			sen.file_input();
+			sen.file_input(choice);
 			
 			break;
 		
