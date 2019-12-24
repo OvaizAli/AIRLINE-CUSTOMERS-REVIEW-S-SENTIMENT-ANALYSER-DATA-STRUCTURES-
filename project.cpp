@@ -1,4 +1,3 @@
-//@@ -0,0 +1,542 @@
 #include<iostream>
 #include <string.h>
 #include <cstdlib>              // Header Files 
@@ -41,7 +40,7 @@ class sentinal
 		
 		string userinput;
 		
-		string words[1000];
+		string words[1000]={};
 		
 		int wordcount=0;
 		
@@ -51,9 +50,17 @@ class sentinal
 		
 		int notflag=0;
 		
+		int noneflag=0;
+		
+		int noflag=0;
+		
 		int dontflag=0;
 		
+		int didntflag=0;
+		
 		int wontflag=0;
+		
+		int stat=0; 
 		
 		int len;
 		
@@ -255,28 +262,6 @@ class sentinal
 		}
 		
 		
-		void user_input()
-		{
-			
-			cout<<"Enter customer's review for analysis:"<<endl;
-			
-			fflush(stdin);
-			
-			getline(cin,userinput);
-		
-		}
-		
-		
-		void file_input()
-		{
-			
-			fstream inp("Input.txt");
-			
-			getline(inp,userinput);
-		
-		}
-		
-		
 		void wordbreak()
 		{
 			
@@ -296,7 +281,7 @@ class sentinal
 			for(int i=0;i<len;i++)
 			{
 				
-				if(userinput[i]==' '||userinput[i]=='.')
+				if(userinput[i]==' ')
 				{
 					
 					x++;
@@ -305,6 +290,16 @@ class sentinal
 					
 					continue;
 				
+				}
+				
+				if(userinput[i]=='.'||userinput[i]==',')
+				{
+						
+					x++;
+					
+					wordcount++;
+					
+					continue;
 				}
 				
 				words[x]+=userinput[i];
@@ -347,6 +342,44 @@ class sentinal
 					
 					}
 					
+					if(noflag==1)
+					{
+						
+						negative++;
+						
+						string t="no ";
+						
+						t+=temp;
+						
+						negtv.push(t);
+						
+						noflag=0;
+						
+						flag++;
+						
+						return;
+					
+					}
+					
+					if(noneflag==1)
+					{
+						
+						negative++;
+						
+						string t="none ";
+						
+						t+=temp;
+						
+						negtv.push(t);
+						
+						noneflag=0;
+						
+						flag++;
+						
+						return;
+					
+					}
+					
 					if(wontflag==1)
 					{
 						
@@ -378,6 +411,25 @@ class sentinal
 						negtv.push(t);
 						
 						dontflag=0;
+						
+						flag++;
+						
+						return;
+					
+					}
+					
+					if(didntflag==1)
+					{
+						
+						negative++;
+						
+						string t="didn't ";
+						
+						t+=temp;
+						
+						negtv.push(t);
+						
+						didntflag=0;
 						
 						flag++;
 						
@@ -422,6 +474,44 @@ class sentinal
 					
 					}
 					
+					if(noflag==1)
+					{
+						
+						positive++;
+						
+						string t="no ";
+						
+						t+=temp;
+						
+						postv.push(t);
+						
+						noflag=0;
+						
+						flag++;
+						
+						return;
+					
+					}
+					
+					if(noneflag==1)
+					{
+						
+						positive++;
+						
+						string t="none ";
+						
+						t+=temp;
+						
+						postv.push(t);
+						
+						noneflag=0;
+						
+						flag++;
+						
+						return;
+					
+					}
+					
 					if(wontflag==1)
 					{
 						
@@ -460,6 +550,25 @@ class sentinal
 					
 					}
 					
+					if(didntflag==1)
+					{
+						
+						positive++;
+						
+						string t="didn't ";
+						
+						t+=temp;
+						
+						postv.push(t);
+						
+						didntflag=0;
+						
+						flag++;
+						
+						return;
+					
+					}
+					
 					else
 					{
 						
@@ -490,25 +599,56 @@ class sentinal
 				
 				if(words[i]=="not")
 				{
-					
+					cout<<"not"<<endl;////
 					notflag++;
 					
 					continue;
 				
 				}
 				
-				else if(words[i]=="won't"||words[i]=="wont")
+				if(words[i]=="no")
 				{
+					cout<<"no"<<endl;///
+					noflag++;
+					
+					continue;
+				
+				}
+				
+				if(words[i]=="none")
+				{
+					cout<<"none"<<endl;////
+					noneflag++;
+					
+					continue;
+				
+				}
+				
+				if(words[i]=="wont"||words[i]=="won't")
+				{
+					cout<<"wont"<<endl;////
 					wontflag++;
 					
 					continue;
+				
 				}
 				
-				else if(words[i]=="don't"||words[i]=="dont")
+				if(words[i]=="dont"||words[i]=="don't")
 				{
+					cout<<"dont"<<endl;////
 					dontflag++;
 					
 					continue;
+				
+				}
+				
+				if(words[i]=="didnt"||words[i]=="didn't")
+				{
+					cout<<"didnt"<<endl;////
+					didntflag++;
+					
+					continue;
+					
 				}
 				
 				flag=0;
@@ -519,6 +659,7 @@ class sentinal
 					search(negativeroot,words[i],2);
 				else
 					continue;	
+					
 			
 			}
 		
@@ -528,7 +669,9 @@ class sentinal
 		void result()
 		{
 			
-			system("cls");
+			//system("cls");
+			
+			cout<<"analysed sentence: "<<endl<<userinput<<endl;
 			
 			if(!postv.empty())
 			{
@@ -562,25 +705,96 @@ class sentinal
 			
 			}
 			
+			cout<<endl;
+			
 			double total=positive+negative;
 			
 			cout<<"positive sentiments: "<<positive<<endl;
 			
-			cout<<"total sentimental references: "<<total<<endl;
+			cout<<"Negative sentiments: "<<negative<<endl;
 			
-			cout<<endl;
+			cout<<"total sentimental references: "<<total<<endl;
 			
 			polarity=positive/total;
 			
-			cout<<endl<<"POLARITY OF THE SENTENCE IS: "<<polarity<<endl;
+			cout<<endl<<"POLARITY OF THE SENTENCE IS: "<<polarity<<endl<<endl;
+			
+			for(int i=0;i<wordcount;i++)
+			{
+				
+				words[i].clear();
+					
+			}
 		
 		}
 		
 		void upperToLowerCase()
 		{
 			transform(userinput.begin(),userinput.end(),userinput.begin(),::tolower);
-			cout<<userinput;
 		}
+		
+		void user_input()
+		{
+			
+			cout<<"Enter customer's review for analysis:"<<endl;
+			
+			fflush(stdin);
+			
+			getline(cin,userinput);
+			
+			ofstream out;
+			
+			out.open("Input.txt",ios_base::app);
+			
+			upperToLowerCase();
+			
+			out<<userinput<<endl;
+	
+			wordbreak();
+			
+			word_search();
+			
+			result();
+			
+			out.close();
+		}
+		
+		
+		void file_input()
+		{
+			
+			fstream inp("Input.txt");
+			
+			while(!inp.eof())
+			{
+				
+				stat++;
+				
+				positive=0;
+				
+				negative=0;
+				
+				//userinput.clear();
+				
+				getline(inp,userinput);
+				
+				if(userinput=="\n"||userinput=="\0")
+					return;
+				
+				upperToLowerCase();
+	
+				wordbreak();
+				
+				word_search();
+				
+				result();
+				
+			}	
+			
+			inp.close();
+				
+		}
+		
 		
 };
 
@@ -630,15 +844,7 @@ int main()
 			
 			exit(0);		
 	
-	}
-	
-	sen.upperToLowerCase();
-	
-	sen.wordbreak();
-	
-	sen.word_search();
-	
-	sen.result();      
+	}      
     
 	return 0; 
 
