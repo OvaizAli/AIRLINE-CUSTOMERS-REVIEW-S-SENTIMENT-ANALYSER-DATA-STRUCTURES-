@@ -821,11 +821,11 @@ class sentinal
 		
 		void user_input(int choice)
 		{
-			gotoxy(20,13);
+			
 			cout<<"Enter customer's review for analysis:"<<endl;
 			
 			fflush(stdin);
-			gotoxy(20,15);
+			
 			getline(cin,userinput);
 			
 			system("cls");
@@ -908,9 +908,7 @@ int main()
 	cout<<"1) To place customer's review for sentiment analysis";
 	gotoxy(20,7);
 	cout<<"2) To place file of customer's review for sentiment analysis"<<endl;
-	gotoxy(20,9);
-	cout<<"Option: "<<endl;
-	gotoxy(45,11);
+	
 	cin>>choice;
 	
 	switch(choice)
