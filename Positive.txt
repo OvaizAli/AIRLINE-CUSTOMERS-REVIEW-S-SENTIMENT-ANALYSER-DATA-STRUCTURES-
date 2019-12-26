@@ -13,7 +13,6 @@ X?D
 xd
 xD
 XD
-<3
 :-]
 :^)
 :}
@@ -1820,7 +1819,6 @@ talents
 tantalize
 tantalizing
 tantalizingly
-tasty
 tempt
 tempting
 temptingly
@@ -1975,6 +1973,7 @@ warmly
 warmth
 wealthy
 welcome
+well
 well-backlit
 well-balanced
 well-behaved
