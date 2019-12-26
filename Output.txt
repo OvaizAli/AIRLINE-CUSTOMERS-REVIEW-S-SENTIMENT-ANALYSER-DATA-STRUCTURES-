@@ -47,3 +47,30 @@ total sentimental references: 4
 
 POLARITY OF THE SENTENCE IS: 0
 
+analysed sentence: 
+i am not happy
+
+negative words:
+not happy
+
+positive sentiments: 0
+Negative sentiments: 1
+total sentimental references: 1
+
+POLARITY OF THE SENTENCE IS: 0
+
+analysed sentence: 
+the food was really tasty but the tea was not that much strong as i like but its okay because everything can't be upto the choice.
+
+positive words:
+like
+
+negative words:
+not strong
+
+positive sentiments: 1
+Negative sentiments: 1
+total sentimental references: 2
+
+POLARITY OF THE SENTENCE IS: 0.5
+
