@@ -1,14 +1,15 @@
 #include<iostream>
-#include <string.h>
-#include <cstdlib>              // Header Files 
-#include<conio.h>               // for getch() function 
-#include<fstream>
-#include <queue>
+#include <string.h>				 // For string handling
+#include <cstdlib>               // Header Files 
+#include<conio.h>              	 // For getch() function 
+#include<fstream>			  	 // For file handling
+#include <queue>				 // Using built-in Queue
 #include<bits/stdc++.h>
-#include<windows.h>             // Necessary when treating consoles  
+#include<windows.h>              // Necessary when treating consoles  
+
 using namespace std;
 
-void gotoxy (int x, int y)
+void gotoxy (int x, int y)      // Function for displaying entities accordingly
     {
          COORD coordinates;     // coordinates is declared as COORD
          coordinates.X = x;     // defining x-axis
@@ -32,33 +33,33 @@ class node{
 				
 };
 
-class sentinal
+class sentiment
 {
 	public:
 		
-		node *positiveroot,*negativeroot;
+		node *positiveroot,*negativeroot; 	// Nodes to create balanced AVL trees for positive and negative words
 		
-		string userinput;
+		string userinput;					// String entered by user	
 		
-		string words[1000]={};
+		string words[1000]={};				// Words extracted from user input
 		
-		int wordcount=0;
+		int wordcount=0;					// Count for the number of words entered by the user
 		
-		int positive=0;
+		int positive=0;						// Count for the number of positive words entered by the user
 		
-		int negative=0;
+		int negative=0;						// Count for the number of negative words entered by the user
 		
-		int notflag=0;
+		int notflag=0;						// Flag set if not is in the input string 
 		
-		int noneflag=0;
+		int noneflag=0;						// Flag set if none is in the input string 
 		
-		int noflag=0;
+		int noflag=0;						// Flag set if no is in the input string 
 		
-		int dontflag=0;
+		int dontflag=0;						// Flag set if dont || don't is in the input string 
 		
-		int didntflag=0;
+		int didntflag=0;					// Flag set if didnt || didn't is in the input string 
 		
-		int wontflag=0;
+		int wontflag=0;						// Flag set if wont || won't is in the input string 
 		
 		int stat=0; 
 		
@@ -73,7 +74,7 @@ class sentinal
 		queue<string> negtv;
 			
 
-		sentinal():positiveroot(0),negativeroot(0)
+		sentiment():positiveroot(0),negativeroot(0)
 		{
 			
 		}
@@ -194,7 +195,7 @@ class sentinal
 		}
 		
 		
-		node *negtree()
+		node *negtree()								// Creates balanced AVL tree for negative words
 		{
 			
 			fstream neg("Negative.txt");
@@ -215,7 +216,7 @@ class sentinal
 		}
 		
 
-		node *postree()
+		node *postree()								// Creates balanced AVL tree for positive words
 		{
 			
 			fstream pos("Positive.txt");
@@ -262,7 +263,7 @@ class sentinal
 		}
 		
 		
-		void wordbreak()
+		void wordbreak()						// Breaks words by " " || "." || "," which can used in searching
 		{
 			
 			len=userinput.length();
@@ -309,7 +310,7 @@ class sentinal
 		}
 		
 		
-		void search(node *root,string temp,int n)
+		void search(node *root,string temp,int n) 			// Function used for searching the extracted words
 		{
 			
 			if(root==NULL)
@@ -342,7 +343,7 @@ class sentinal
 					
 					}
 					
-					if(noflag==1)
+					else if(noflag==1)
 					{
 						
 						negative++;
@@ -361,7 +362,7 @@ class sentinal
 					
 					}
 					
-					if(noneflag==1)
+					else if(noneflag==1)
 					{
 						
 						negative++;
@@ -380,7 +381,7 @@ class sentinal
 					
 					}
 					
-					if(wontflag==1)
+					else if(wontflag==1)
 					{
 						
 						negative++;
@@ -399,7 +400,7 @@ class sentinal
 					
 					}
 					
-					if(dontflag==1)
+					else if(dontflag==1)
 					{
 						
 						negative++;
@@ -418,7 +419,7 @@ class sentinal
 					
 					}
 					
-					if(didntflag==1)
+					else if(didntflag==1)
 					{
 						
 						negative++;
@@ -474,7 +475,7 @@ class sentinal
 					
 					}
 					
-					if(noflag==1)
+					else if(noflag==1)
 					{
 						
 						positive++;
@@ -493,7 +494,7 @@ class sentinal
 					
 					}
 					
-					if(noneflag==1)
+					else if(noneflag==1)
 					{
 						
 						positive++;
@@ -512,7 +513,7 @@ class sentinal
 					
 					}
 					
-					if(wontflag==1)
+					else if(wontflag==1)
 					{
 						
 						positive++;
@@ -531,7 +532,7 @@ class sentinal
 					
 					}
 					
-					if(dontflag==1)
+					else if(dontflag==1)
 					{
 						
 						positive++;
@@ -550,7 +551,7 @@ class sentinal
 					
 					}
 					
-					if(didntflag==1)
+					else if(didntflag==1)
 					{
 						
 						positive++;
@@ -591,7 +592,7 @@ class sentinal
 		}
 		
 		
-		void word_search()
+		void word_search()                          // Searching throught input words to increment values of various flags
 		{
 			
 			for(int i=0;i<wordcount;i++)
@@ -669,7 +670,7 @@ class sentinal
 		void result(int choice)
 		{
 			
-			//system("cls");
+			system("cls");
 			if(choice==1)
 				result_user();
 				
@@ -692,16 +693,26 @@ class sentinal
 			
 			out.open("Output.txt",ios_base::app);
 			
-			cout<<"analysed sentence: "<<endl<<userinput<<endl;
+			cout<<"******************************************************************************************************";
 			
-			out<<"analysed sentence: "<<endl<<userinput<<endl;
+			gotoxy(40,1);
+			
+			cout<<"ANALYSIS REPORT"<<endl;
+			
+			cout<<"******************************************************************************************************"<<endl;
+			
+			out<<"******************************************************************************************************"<<endl;
+			
+			cout<<"Analysed Review: "<<endl<<userinput<<endl;
+			
+			out<<"Analysed Review: "<<endl<<userinput<<endl;
 			
 			if(!postv.empty())
 			{
 				
-				cout<<endl<<"positive words:"<<endl;
+				cout<<endl<<"Positive Words:"<<endl;
 				
-				out<<endl<<"positive words:"<<endl;
+				out<<endl<<"Positive Words:"<<endl;
 				
 				while(!postv.empty())
 				{
@@ -719,9 +730,9 @@ class sentinal
 			if(!negtv.empty())
 			{
 				
-				cout<<endl<<"negative words:"<<endl;
+				cout<<endl<<"Negative Words:"<<endl;
 				
-				out<<endl<<"negative words:"<<endl;
+				out<<endl<<"Negative Words:"<<endl;
 				
 				while(!negtv.empty())
 				{
@@ -742,35 +753,35 @@ class sentinal
 			
 			double total=positive+negative;
 			
-			cout<<"positive sentiments: "<<positive<<endl;
+			cout<<"Positive Sentiments: "<<positive<<endl;
 			
-			out<<"positive sentiments: "<<positive<<endl;
+			out<<"Positive Sentiments: "<<positive<<endl;
 			
-			cout<<"Negative sentiments: "<<negative<<endl;
+			cout<<"Negative Sentiments: "<<negative<<endl;
 			
-			out<<"Negative sentiments: "<<negative<<endl;
+			out<<"Negative Sentiments: "<<negative<<endl;
 			
-			cout<<"total sentimental references: "<<total<<endl;
+			cout<<"Total Sentimental References: "<<total<<endl;
 			
-			out<<"total sentimental references: "<<total<<endl;
+			out<<"Total Sentimental References: "<<total<<endl;
 			
 			polarity=positive/total;
 			
-			cout<<endl<<"POLARITY OF THE SENTENCE IS: "<<polarity<<endl<<endl;
+			cout<<endl<<"Polarity: "<<polarity<<endl<<endl;
 			
-			out<<endl<<"POLARITY OF THE SENTENCE IS: "<<polarity<<endl<<endl;
+			out<<endl<<"Polarity: "<<polarity<<endl<<endl;
 			
 		}
 		
 		void result_file()
 		{
 			
-			cout<<"analysed sentence: "<<endl<<userinput<<endl;
+			cout<<"Analysed Review: "<<endl<<userinput<<endl;
 			
 			if(!postv.empty())
 			{
 				
-				cout<<endl<<"positive words:"<<endl;
+				cout<<endl<<"Positive Words:"<<endl;
 				
 				while(!postv.empty())
 				{
@@ -786,7 +797,7 @@ class sentinal
 			if(!negtv.empty())
 			{
 				
-				cout<<endl<<"negative words:"<<endl;
+				cout<<endl<<"Negative Words:"<<endl;
 				
 				while(!negtv.empty())
 				{
@@ -803,15 +814,15 @@ class sentinal
 			
 			double total=positive+negative;
 			
-			cout<<"positive sentiments: "<<positive<<endl;
+			cout<<"Positive Sentiments: "<<positive<<endl;
 			
-			cout<<"Negative sentiments: "<<negative<<endl;
+			cout<<"Negative Sentiments: "<<negative<<endl;
 			
-			cout<<"total sentimental references: "<<total<<endl;
+			cout<<"Total Sentimental References: "<<total<<endl;
 			
 			polarity=positive/total;
 			
-			cout<<endl<<"POLARITY OF THE SENTENCE IS: "<<polarity<<endl<<endl;
+			cout<<endl<<"Polarity: "<<polarity<<endl<<endl;
 			
 		}
 		void upperToLowerCase()
@@ -822,13 +833,13 @@ class sentinal
 		void user_input(int choice)
 		{
 			
+			system("cls");
+			
 			cout<<"Enter customer's review for analysis:"<<endl;
 			
 			fflush(stdin);
 			
 			getline(cin,userinput);
-			
-			system("cls");
 			
 			ofstream out;
 			
@@ -890,7 +901,7 @@ class sentinal
 int main()
 {
 	
-	sentinal sen;
+	sentiment sen;
 	
 	sen.negtree();
 	
@@ -905,10 +916,12 @@ int main()
 	gotoxy(40,4);
 	cout<<"***CHOICES***";
 	gotoxy(20,6);
-	cout<<"1) To place customer's review for sentiment analysis";
+	cout<<"1) Place customer's review for sentiment analysis";
 	gotoxy(20,7);
-	cout<<"2) To place file of customer's review for sentiment analysis"<<endl;
-	
+	cout<<"2) Place multiple customer's review for sentiment analysis from file"<<endl;
+	gotoxy(20,9);
+	cout<<"Option:";
+	gotoxy(28,10);
 	cin>>choice;
 	
 	switch(choice)

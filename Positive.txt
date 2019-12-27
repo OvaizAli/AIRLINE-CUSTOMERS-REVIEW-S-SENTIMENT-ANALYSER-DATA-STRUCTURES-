@@ -1819,6 +1819,7 @@ talents
 tantalize
 tantalizing
 tantalizingly
+tasty
 tempt
 tempting
 temptingly

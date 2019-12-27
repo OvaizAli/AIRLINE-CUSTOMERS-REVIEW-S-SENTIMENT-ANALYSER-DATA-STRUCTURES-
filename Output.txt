@@ -1,76 +1,28 @@
-analysed sentence: 
-the food was really tasty but the tea was not that much strong as i like but its okay because everything can't be upto the choice.
+******************************************************************************************************
+Analysed Review: 
+happy and great
 
-positive words:
-tasty
-like
+Positive Words:
+happy
+great
 
-negative words:
-not strong
+Positive Sentiments: 2
+Negative Sentiments: 0
+Total Sentimental References: 2
 
-positive sentiments: 2
-Negative sentiments: 1
-total sentimental references: 3
+Polarity: 1
 
-POLARITY OF THE SENTENCE IS: 0.666667
+******************************************************************************************************
+Analysed Review: 
+sadly bad experience
 
-analysed sentence: 
-i am pleased to tellyou that me and my wife really enjoyed your trip and its services especially the food and the seats which were really comfortable. thanks for making our honymoon journey really amazing and worth remembering. :) <3
+Negative Words:
+sadly
+bad
 
-positive words:
-pleased
-enjoyed
-comfortable
-amazing
-worth
-:)
-<3
+Positive Sentiments: 0
+Negative Sentiments: 2
+Total Sentimental References: 2
 
-positive sentiments: 7
-Negative sentiments: 0
-total sentimental references: 7
-
-POLARITY OF THE SENTENCE IS: 1
-
-analysed sentence: 
-i am sorry to say but we didnt enjoyed any of the provided services. pathetic crew and service :{
-
-negative words:
-sorry
-didn't enjoyed
-pathetic
-:{
-
-positive sentiments: 0
-Negative sentiments: 4
-total sentimental references: 4
-
-POLARITY OF THE SENTENCE IS: 0
-
-analysed sentence: 
-i am not happy
-
-negative words:
-not happy
-
-positive sentiments: 0
-Negative sentiments: 1
-total sentimental references: 1
-
-POLARITY OF THE SENTENCE IS: 0
-
-analysed sentence: 
-the food was really tasty but the tea was not that much strong as i like but its okay because everything can't be upto the choice.
-
-positive words:
-like
-
-negative words:
-not strong
-
-positive sentiments: 1
-Negative sentiments: 1
-total sentimental references: 2
-
-POLARITY OF THE SENTENCE IS: 0.5
+Polarity: 0
 
