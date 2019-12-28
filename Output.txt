@@ -26,3 +26,17 @@ Total Sentimental References: 2
 
 Polarity: 0
 
+******************************************************************************************************
+Analysed Review: 
+great trip :) thanks for making christmas special for me
+
+Positive Words:
+great
+:)
+
+Positive Sentiments: 2
+Negative Sentiments: 0
+Total Sentimental References: 2
+
+Polarity: 1
+
