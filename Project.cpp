@@ -5,6 +5,10 @@
 #include<fstream>			  	 // For file handling
 #include <queue>				 // Using built-in Queue
 #include<bits/stdc++.h>
+#include <time.h>
+#include <unistd.h>
+#include <dos.h>
+#include <stdlib.h>     		 //for using the function sleep
 #include<windows.h>              // Necessary when treating consoles  
 
 using namespace std;
@@ -16,7 +20,7 @@ void gotoxy (int x, int y)      // Function for displaying entities accordingly
          coordinates.Y = y;     //defining  y-axis
         SetConsoleCursorPosition(GetStdHandle(STD_OUTPUT_HANDLE),coordinates);       
     }
-    
+     
 class node{
 	public:
 		
@@ -670,7 +674,6 @@ class sentiment
 		void result(int choice)
 		{
 			
-			system("cls");
 			if(choice==1)
 				result_user();
 				
@@ -688,6 +691,7 @@ class sentiment
 		
 		int result_user()
 		{
+			system("cls");
 			
 			ofstream out;
 			
@@ -771,6 +775,26 @@ class sentiment
 			
 			out<<endl<<"Polarity: "<<polarity<<endl<<endl;
 			
+			if(positive == negative)
+			{
+				cout<<endl<<"Sentiment possessed is NEUTRAL "<<endl<<endl;
+			
+				out<<endl<<"Sentiment possessed is NEUTRAL "<<endl<<endl;
+			}
+			
+			else if(polarity > 0)
+			{
+				cout<<endl<<"Sentiment possessed is POSITIVE "<<endl<<endl;
+			
+				out<<endl<<"Sentiment possessed is POSITIVE "<<endl<<endl;
+			}
+			
+			else if(polarity <= 0)
+			{
+				cout<<endl<<"Sentiment possessed is NEGATIVE "<<endl<<endl;
+			
+				out<<endl<<"Sentiment possessed is NEGATIVE "<<endl<<endl;
+			}
 		}
 		
 		void result_file()
@@ -824,6 +848,25 @@ class sentiment
 			
 			cout<<endl<<"Polarity: "<<polarity<<endl<<endl;
 			
+			if(positive == negative)
+			{
+				cout<<endl<<"Sentiment possessed is NEUTRAL "<<endl<<endl;
+			
+			}
+			
+			else if(polarity > 0)
+			{
+				cout<<endl<<"Sentiment possessed is POSITIVE "<<endl<<endl;
+			
+			}
+			
+			else if(polarity <= 0)
+			{
+				cout<<endl<<"Sentiment possessed is NEGATIVE "<<endl<<endl;
+			
+			}
+			
+			cout<<"******************************************************************************************************"<<endl;
 		}
 		void upperToLowerCase()
 		{
@@ -861,8 +904,17 @@ class sentiment
 		
 		void file_input(int choice)
 		{
+			system("cls");
 			
 			fstream inp("Input.txt");
+			
+			cout<<"******************************************************************************************************"<<endl;
+			
+			gotoxy(40,1);
+			
+			cout<<"ANALYSIS REPORT"<<endl;
+			
+			cout<<"******************************************************************************************************"<<endl;
 			
 			while(!inp.eof())
 			{
@@ -892,37 +944,39 @@ class sentiment
 			
 			inp.close();
 				
-		}
-		
+		}	
 		
 };
 
-
-int main()
-{
+void menu()
+	{
+		sentiment sen;
 	
-	sentiment sen;
-	
-	sen.negtree();
-	
-	sen.postree();
-	
-	int choice;
-	
-	cout<<"******************************************************************************************************";
-	gotoxy(20,1);
-	cout<<"WELCOME TO AIRLINE CUSTOMERS' REVIEW'S SENTIMENT ANALYSER"<<endl;
-	cout<<"******************************************************************************************************"<<endl;
-	gotoxy(40,4);
-	cout<<"***CHOICES***";
-	gotoxy(20,6);
-	cout<<"1) Place customer's review for sentiment analysis";
-	gotoxy(20,7);
-	cout<<"2) Place multiple customer's review for sentiment analysis from file"<<endl;
-	gotoxy(20,9);
-	cout<<"Option:";
-	gotoxy(28,10);
-	cin>>choice;
+		sen.negtree();
+		
+		sen.postree();
+		
+		int choice;
+		cout<<"******************************************************************************************************";
+		gotoxy(20,1);
+		cout<<"WELCOME TO AIRLINE CUSTOMERS' REVIEW'S SENTIMENT ANALYSER"<<endl;
+		cout<<"******************************************************************************************************"<<endl;
+		gotoxy(40,4);
+		cout<<"***CHOICES***";
+		gotoxy(20,6);
+		cout<<"1) Place customer's review for sentiment analysis";
+		gotoxy(20,8);
+		cout<<"2) Place multiple customer's review for sentiment analysis from file"<<endl;
+		gotoxy(20,10);
+		cout<<"3) Place another review (!! Choose option (2) for sentiment analysis"<<endl;
+		gotoxy(20,11);
+		cout<<" of multiple reviews)"<<endl;
+		gotoxy(20,13);
+		cout<<"4) Exit"<<endl;
+		gotoxy(40,15);
+		cout<<"Option:";
+		gotoxy(48,16);
+		cin>>choice;
 	
 	switch(choice)
 	{
@@ -938,15 +992,67 @@ int main()
 			sen.file_input(choice);
 			
 			break;
-		
+		case 3:
+			
+			system("cls");
+			
+			menu();
+
+			break;
+		case 4:
+			
+			exit(0);
+			
+			break;
 		default:
 			
 			cout<<"Wrong Choice"<<endl;
 			
 			exit(0);		
+	}
 	
-	}      
+	}
+
+
+int main()
+{
+	cout<<"******************************************************************************************************";
+	gotoxy(20,1);
+	cout<<"WELCOME TO AIRLINE CUSTOMERS' REVIEW'S SENTIMENT ANALYSER"<<endl;
+	cout<<"******************************************************************************************************"<<endl;
+	gotoxy(40,4);
+	cout<<"***DISCLAIMER***";
+	gotoxy(17,6);
+	cout<<"$ This project is the implementation of 'JOURNAL OF INFORMATION,";
+	gotoxy(17,7);
+	cout<<" KNOWLEDGE AND RESEARCH IN COMPUTER ENGINEERING (ISSN 0975 – 6760,";
+	gotoxy(17,8);
+	cout<<" GIF: 01.1135, SIF: 02.502)' ";
+	
+	gotoxy(17,10);
+	cout<<"$ Minqing Hu and Bing Liu. 'Mining and Summarizing Customer Reviews.'"; 
+	gotoxy(17,11);
+    cout<<"Proceedings of the ACM SIGKDD International Conference on Knowledge";
+    gotoxy(17,12);
+    cout<<"Discovery and Data Mining (KDD-2004), Aug 22-25, 2004, Seattle,";
+    gotoxy(17,13);
+    cout<<"Washington, USA";
     
+    gotoxy(17,15);
+	cout<<"$ Bing Liu, Minqing Hu and Junsheng Cheng. 'Opinion Observer: Analyzing"; 
+	gotoxy(17,16);
+    cout<<"and Comparing Opinions on the Web.' Proceedings of the 14th ";
+    gotoxy(17,17);
+    cout<<"International World Wide Web conference (WWW-2005), May 10-14,";
+    gotoxy(17,18);
+    cout<<"2005, Chiba, Japan.";
+    
+    sleep(2); 
+	 
+	system ("cls");
+	menu();
+	      
 	return 0; 
 
 }
+

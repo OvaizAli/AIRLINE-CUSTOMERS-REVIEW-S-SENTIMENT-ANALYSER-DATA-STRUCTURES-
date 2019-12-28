@@ -1,24 +1,97 @@
 ******************************************************************************************************
 Analysed Review: 
-happy and great
+top quality experience
 
 Positive Words:
-happy
-great
+top
 
-Positive Sentiments: 2
+Positive Sentiments: 1
 Negative Sentiments: 0
-Total Sentimental References: 2
+Total Sentimental References: 1
 
 Polarity: 1
 
+
+Sentiment possessed is POSITIVE 
+
 ******************************************************************************************************
 Analysed Review: 
-sadly bad experience
+sad but great thrill
+
+Positive Words:
+great
+thrill
 
 Negative Words:
-sadly
-bad
+sad
+
+Positive Sentiments: 2
+Negative Sentiments: 1
+Total Sentimental References: 3
+
+Polarity: 0.666667
+
+
+Sentiment possessed is POSITIVE 
+
+******************************************************************************************************
+Analysed Review: 
+sad and great
+
+Positive Words:
+great
+
+Negative Words:
+sad
+
+Positive Sentiments: 1
+Negative Sentiments: 1
+Total Sentimental References: 2
+
+Polarity: 0.5
+
+
+Sentiment possessed is NEUTRAL 
+
+******************************************************************************************************
+Analysed Review: 
+sad
+
+Negative Words:
+sad
+
+Positive Sentiments: 0
+Negative Sentiments: 1
+Total Sentimental References: 1
+
+Polarity: 0
+
+
+Sentiment possessed is NEGATIVE 
+
+******************************************************************************************************
+Analysed Review: 
+happy
+
+Positive Words:
+happy
+
+Positive Sentiments: 1
+Negative Sentiments: 0
+Total Sentimental References: 1
+
+Polarity: 1
+
+
+Sentiment possessed is POSITIVE 
+
+******************************************************************************************************
+Analysed Review: 
+torned seat and poor service :(
+
+Negative Words:
+poor
+:(
 
 Positive Sentiments: 0
 Negative Sentiments: 2
@@ -26,17 +99,19 @@ Total Sentimental References: 2
 
 Polarity: 0
 
+
+Sentiment possessed is NEGATIVE 
+
 ******************************************************************************************************
 Analysed Review: 
-great trip :) thanks for making christmas special for me
+torn seat covers
 
-Positive Words:
-great
-:)
-
-Positive Sentiments: 2
+Positive Sentiments: 0
 Negative Sentiments: 0
-Total Sentimental References: 2
+Total Sentimental References: 0
 
-Polarity: 1
+Polarity: nan
+
+
+Sentiment possessed is NEUTRAL 
 
