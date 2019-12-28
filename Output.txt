@@ -113,5 +113,51 @@ Total Sentimental References: 0
 Polarity: nan
 
 
-Sentiment possessed is NEUTRAL 
+Sentiment possessed is NEUTRAL ******************************************************************************************************
+Analysed Review: 
+amazing food and service
+
+Positive Words:
+amazing
+
+Positive Sentiments: 1
+Negative Sentiments: 0
+Total Sentimental References: 1
+
+Polarity: 1
+
+
+Sentiment possessed is POSITIVE 
+
+******************************************************************************************************
+Analysed Review: 
+i loved your  service
+
+Positive Words:
+loved
+
+Positive Sentiments: 1
+Negative Sentiments: 0
+Total Sentimental References: 1
+
+Polarity: 1
+
+
+Sentiment possessed is POSITIVE 
+
+******************************************************************************************************
+Analysed Review: 
+worst service ever provided
+
+Negative Words:
+worst
+
+Positive Sentiments: 0
+Negative Sentiments: 1
+Total Sentimental References: 1
+
+Polarity: 0
+
+
+Sentiment possessed is NEGATIVE 
 
