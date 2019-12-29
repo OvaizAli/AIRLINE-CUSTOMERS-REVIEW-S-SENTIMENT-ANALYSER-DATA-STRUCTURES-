@@ -161,3 +161,80 @@ Polarity: 0
 
 Sentiment possessed is NEGATIVE 
 
+******************************************************************************************************
+Analysed Review: 
+best airline
+
+Positive Words:
+best
+
+Positive Sentiments: 1
+Negative Sentiments: 0
+Total Sentimental References: 1
+
+Polarity: 1
+
+
+Sentiment possessed is POSITIVE 
+
+******************************************************************************************************
+Analysed Review: 
+sad visit
+
+Negative Words:
+sad
+
+Positive Sentiments: 0
+Negative Sentiments: 1
+Total Sentimental References: 1
+
+Polarity: 0
+
+
+Sentiment possessed is NEGATIVE 
+
+******************************************************************************************************
+Analysed Review: 
+
+
+Positive Sentiments: 0
+Negative Sentiments: 0
+Total Sentimental References: 0
+
+Polarity: nan
+
+
+Sentiment possessed is NEUTRAL 
+
+******************************************************************************************************
+Analysed Review: 
+glad to be your customer
+
+Positive Words:
+glad
+
+Positive Sentiments: 1
+Negative Sentiments: 0
+Total Sentimental References: 1
+
+Polarity: 1
+
+
+Sentiment possessed is POSITIVE 
+
+******************************************************************************************************
+Analysed Review: 
+just love
+
+Positive Words:
+love
+
+Positive Sentiments: 1
+Negative Sentiments: 0
+Total Sentimental References: 1
+
+Polarity: 1
+
+
+Sentiment possessed is POSITIVE 
+

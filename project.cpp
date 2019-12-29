@@ -665,7 +665,6 @@ class sentiment
 				else
 					continue;	
 					
-			
 			}
 		
 		}
@@ -686,6 +685,10 @@ class sentiment
 				words[i].clear();
 					
 			}
+			
+			sleep(5);
+			
+			system("cls");
 		
 		}
 		
@@ -1001,10 +1004,6 @@ void menu()
 			exit(0);		
 	}
 	
-	sleep(7);
-	
-	system("cls");
-	
 	menu();
 
 }
@@ -1016,8 +1015,10 @@ int main()
 	gotoxy(20,1);
 	cout<<"WELCOME TO AIRLINE CUSTOMERS' REVIEW'S SENTIMENT ANALYSER"<<endl;
 	cout<<"******************************************************************************************************"<<endl;
+	
 	gotoxy(40,4);
 	cout<<"***DISCLAIMER***";
+	
 	gotoxy(17,6);
 	cout<<"$ This project is the implementation of 'JOURNAL OF INFORMATION,";
 	gotoxy(17,7);
@@ -1046,6 +1047,7 @@ int main()
     sleep(8); 
 	 
 	system ("cls");
+	
 	menu();
 	      
 	return 0; 
