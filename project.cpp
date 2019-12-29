@@ -45,31 +45,31 @@ class sentiment
 		
 		string userinput;					// String entered by user	
 		
-		string words[1000]={};				// Words extracted from user input
+		string words[1000];				// Words extracted from user input
 		
-		int wordcount=0;					// Count for the number of words entered by the user
+		int wordcount;					// Count for the number of words entered by the user
 		
-		int positive=0;						// Count for the number of positive words entered by the user
+		int positive;						// Count for the number of positive words entered by the user
 		
-		int negative=0;						// Count for the number of negative words entered by the user
+		int negative;						// Count for the number of negative words entered by the user
 		
-		int notflag=0;						// Flag set if not is in the input string 
+		int notflag;						// Flag set if not is in the input string 
 		
-		int noneflag=0;						// Flag set if none is in the input string 
+		int noneflag;						// Flag set if none is in the input string 
 		
-		int noflag=0;						// Flag set if no is in the input string 
+		int noflag;						// Flag set if no is in the input string 
 		
-		int dontflag=0;						// Flag set if dont || don't is in the input string 
+		int dontflag;						// Flag set if dont || don't is in the input string 
 		
-		int didntflag=0;					// Flag set if didnt || didn't is in the input string 
+		int didntflag;					// Flag set if didnt || didn't is in the input string 
 		
-		int wontflag=0;						// Flag set if wont || won't is in the input string 
+		int wontflag;						// Flag set if wont || won't is in the input string 
 		
-		int stat=0; 
+		int stat; 
 		
 		int len;
 		
-		int flag=0;
+		int flag;
 		
 		double polarity;
 		
@@ -80,7 +80,7 @@ class sentiment
 
 		sentiment():positiveroot(0),negativeroot(0)
 		{
-			
+			notflag=noneflag=noflag=dontflag=didntflag=wontflag=stat=wordcount=positive=negative=flag=len=0;
 		}
 
 		
@@ -802,7 +802,6 @@ class sentiment
 		
 		void result_file()
 		{
-			
 			cout<<"Analysed Review: "<<endl<<userinput<<endl;
 			
 			if(!postv.empty())
@@ -947,8 +946,24 @@ class sentiment
 			
 			inp.close();
 				
-		}	
+		}
 		
+		void view_all()
+		{
+			ifstream out("Output.txt");
+			
+			system("cls");
+			
+			string outString;
+			
+			while(!out.eof())
+			{
+				getline(out,outString);	
+				cout<<outString<<endl;
+			}
+			
+			out.close();
+		}
 };
 
 void menu()
@@ -969,12 +984,14 @@ void menu()
 		gotoxy(20,6);
 		cout<<"1) Place customer's review for sentiment analysis";
 		gotoxy(20,8);
-		cout<<"2) Place multiple customer's review for sentiment analysis from file"<<endl;
+		cout<<"2) Place multiple customer's review for sentiment analysis from file";
 		gotoxy(20,10);
-		cout<<"3) Exit"<<endl;
-		gotoxy(40,12);
+		cout<<"3) View sentiment analysis of all the customers's reviews";
+		gotoxy(20,12);
+		cout<<"4) Exit"<<endl;
+		gotoxy(40,14);
 		cout<<"Option:";
-		gotoxy(48,14);
+		gotoxy(48,16);
 		cin>>choice;
 	
 	switch(choice)
@@ -994,15 +1011,24 @@ void menu()
 
 		case 3:
 			
-			exit(0);
+			sen.view_all();
 			
 			break;
+		case 4:
+			
+			exit(0);
+			
+			break;	
 		default:
 			
 			cout<<"Wrong Choice"<<endl;
 			
 			exit(0);		
 	}
+	
+	sleep(8); 
+	
+	system ("cls");
 	
 	menu();
 
