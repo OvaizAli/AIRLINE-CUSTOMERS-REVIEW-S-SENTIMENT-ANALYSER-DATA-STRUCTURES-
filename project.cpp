@@ -93,8 +93,83 @@ class sentiment
 		{
 			notflag=noneflag=noflag=dontflag=didntflag=wontflag=stat=wordcount=positive=negative=flag=veryflag=len=0;
 		}
+		~ sentiment()
+		{
+			if(positiveroot!=0)
+			{
+				positiveroot=0;
+				delete positiveroot;
+			}
+			
+			else if(negativeroot!=0)
+			{
+				negativeroot=0;
+				delete negativeroot;
+			}
+		}
 
+		sentiment (const sentiment &rhs) // Copy constructor
+			{
+				
+				this->root=copyTree(rhs.root);
+				
+			}
 		
+		node*copyTree(sentiment &rhs) // Acts as copy constructor
+			{
+				
+				node<T> *newptr,*newlptr,*newrptr,*newNode;
+				
+				if(root==0)
+				{
+					
+					return(root);
+					
+				}
+				if(root->left!=0)
+				{
+					
+					newlptr=copyTree(root->left);
+					
+				}
+				else
+				{
+					
+					newlptr=0;
+					
+				}
+				if(root->right!=0)
+				{
+					
+					newrptr=copyTree(root->right);
+					
+				}
+				else
+				{
+					
+					newptr=0;
+					
+				}
+				
+				newNode=new node(root->Data,newlptr,newrptr);
+				
+				return(newNode);
+			}
+			
+			sentiment & operator = (sentiment &rhs) // '=' operator overloaded
+			{
+				if(this!=&rhs)
+				{
+					
+					deleteTree(this->root);
+					
+					this->root=copyTree(rhs.root);
+					
+				}
+				
+				return(*this);
+			}
+			
 		int max(int a,int b)
 		{
 			

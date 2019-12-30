@@ -316,3 +316,36 @@ Polarity: 0
 
 Sentiment possessed is NEGATIVE 
 
+******************************************************************************************************
+Analysed Review: 
+fascinating :)
+
+Positive Words:
+fascinating
+:)
+
+Positive Sentiments: 2
+Negative Sentiments: 0
+Total Sentimental References: 2
+
+Polarity: 1
+
+
+Sentiment possessed is POSITIVE 
+
+******************************************************************************************************
+Analysed Review: 
+enjoyed
+
+Positive Words:
+enjoyed
+
+Positive Sentiments: 1
+Negative Sentiments: 0
+Total Sentimental References: 1
+
+Polarity: 1
+
+
+Sentiment possessed is POSITIVE 
+
