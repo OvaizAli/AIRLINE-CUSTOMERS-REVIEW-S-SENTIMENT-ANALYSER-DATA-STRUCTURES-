@@ -113,3 +113,206 @@ Polarity: 1
 
 Sentiment possessed is POSITIVE 
 
+******************************************************************************************************
+Analysed Review: 
+unexplainable experience
+
+Positive Sentiments: 0
+Negative Sentiments: 0
+Total Sentimental References: 0
+
+Polarity: nan
+
+
+Sentiment possessed is NEUTRAL 
+
+******************************************************************************************************
+Analysed Review: 
+nice experience
+
+Positive Words:
+nice
+
+Positive Sentiments: 1
+Negative Sentiments: 0
+Total Sentimental References: 1
+
+Polarity: 1
+
+
+Sentiment possessed is POSITIVE 
+
+******************************************************************************************************
+Analysed Review: 
+nice not bad
+
+Positive Words:
+nice
+not bad
+
+Positive Sentiments: 2
+Negative Sentiments: 0
+Total Sentimental References: 2
+
+Polarity: 1
+
+
+Sentiment possessed is POSITIVE 
+
+******************************************************************************************************
+Analysed Review: 
+nice not amazing
+
+Positive Words:
+nice
+
+Negative Words:
+not amazing
+
+Positive Sentiments: 1
+Negative Sentiments: 1
+Total Sentimental References: 2
+
+Polarity: 0.5
+
+
+Sentiment possessed is NEUTRAL 
+
+******************************************************************************************************
+Analysed Review: 
+very god experience
+
+Positive Sentiments: 0
+Negative Sentiments: 0
+Total Sentimental References: 0
+
+Polarity: nan
+
+
+Sentiment possessed is NEUTRAL 
+
+******************************************************************************************************
+Analysed Review: 
+very good experience
+
+Positive Words:
+good
+
+Positive Sentiments: 1
+Negative Sentiments: 0
+Total Sentimental References: 1
+
+Polarity: 1
+
+
+Sentiment possessed is POSITIVE 
+
+******************************************************************************************************
+Analysed Review: 
+very good
+
+Positive Words:
+good
+
+Positive Sentiments: 1
+Negative Sentiments: 0
+Total Sentimental References: 1
+
+Polarity: 1
+
+
+Sentiment possessed is POSITIVE 
+
+******************************************************************************************************
+Analysed Review: 
+very good
+
+Positive Words:
+good
+
+Positive Sentiments: 1
+Negative Sentiments: 0
+Total Sentimental References: 1
+
+Polarity: 1
+
+
+Sentiment possessed is POSITIVE 
+
+******************************************************************************************************
+Analysed Review: 
+very god
+
+Positive Sentiments: 0
+Negative Sentiments: 0
+Total Sentimental References: 0
+
+Polarity: nan
+
+
+Sentiment possessed is NEUTRAL 
+
+******************************************************************************************************
+Analysed Review: 
+very good
+
+Positive Words:
+good
+
+Positive Sentiments: 1
+Negative Sentiments: 0
+Total Sentimental References: 1
+
+Polarity: 1
+
+
+Sentiment possessed is POSITIVE 
+
+******************************************************************************************************
+Analysed Review: 
+very bad
+
+Negative Words:
+bad
+
+Positive Sentiments: 0
+Negative Sentiments: 1
+Total Sentimental References: 1
+
+Polarity: 0
+
+
+Sentiment possessed is NEGATIVE 
+
+******************************************************************************************************
+Analysed Review: 
+i didnt liked the service
+
+Negative Words:
+didn't liked
+
+Positive Sentiments: 0
+Negative Sentiments: 1
+Total Sentimental References: 1
+
+Polarity: 0
+
+
+Sentiment possessed is NEGATIVE 
+
+******************************************************************************************************
+Analysed Review: 
+very nice 
+
+Negative Words:
+very nice
+
+Positive Sentiments: 0
+Negative Sentiments: 1
+Total Sentimental References: 1
+
+Polarity: 0
+
+
+Sentiment possessed is NEGATIVE 
+

@@ -1,3 +1,12 @@
+/***************************************************************************
+* Author: Ovaiz Ali & Zaeem Ahmed                                          *
+* Purpose: Data Structures project                                         *
+* Dated: December 20, 2019                                                 *
+* Version: Final Version                                                   *                                                 
+* Last modified: December 30, 2019                                         *
+****************************************************************************/
+
+
 #include<iostream>
 #include <string.h>				 // For string handling
 #include <cstdlib>               // Header Files 
@@ -65,6 +74,8 @@ class sentiment
 		
 		int wontflag;						// Flag set if wont || won't is in the input string 
 		
+		int veryflag;
+		
 		int stat; 
 		
 		int len;
@@ -80,7 +91,7 @@ class sentiment
 
 		sentiment():positiveroot(0),negativeroot(0)
 		{
-			notflag=noneflag=noflag=dontflag=didntflag=wontflag=stat=wordcount=positive=negative=flag=len=0;
+			notflag=noneflag=noflag=dontflag=didntflag=wontflag=stat=wordcount=positive=negative=flag=veryflag=len=0;
 		}
 
 		
@@ -442,6 +453,25 @@ class sentiment
 					
 					}
 					
+//					else if(veryflag==1)
+//					{
+//						
+//						negative++;
+//						
+//						string t="very ";
+//						
+//						t+=temp;
+//						
+//						negtv.push(t);
+//						
+//						veryflag=0;
+//						
+//						flag++;
+//						
+//						return;
+//					
+//					}
+					
 					else
 					{
 						
@@ -574,6 +604,25 @@ class sentiment
 					
 					}
 					
+//					else if(veryflag==1)
+//					{
+//						
+//						positive++;
+//						
+//						string t="very ";
+//						
+//						t+=temp;
+//						
+//						postv.push(t);
+//						
+//						veryflag=0;
+//						
+//						flag++;
+//						
+//						return;
+//					
+//					}
+					
 					else
 					{
 						
@@ -596,7 +645,7 @@ class sentiment
 		}
 		
 		
-		void word_search()                          // Searching throught input words to increment values of various flags
+		void word_search()                          // Searching throughout input words to increment values of various flags
 		{
 			
 			for(int i=0;i<wordcount;i++)
@@ -655,6 +704,16 @@ class sentiment
 					continue;
 					
 				}
+				
+//				if(words[i]=="very")
+//				{
+//					
+//					veryflag++;
+//					
+//					continue;
+//					
+//				}
+				
 				
 				flag=0;
 				
